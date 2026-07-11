@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Team Builds — Anime Card Clash</title>
+<meta name="description" content="Community Card team builds for Anime Card Clash, filterable by tag and rarity." />
+<meta name="theme-color" content="#0d1613" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><circle cx=%2212%22 cy=%2212%22 r=%229%22 fill=%22%237fffb0%22/></svg>" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+<canvas id="spore-field" aria-hidden="true"></canvas>
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" fill="#7fffb0" opacity="0.15"/><circle cx="12" cy="12" r="4" fill="#7fffb0"/></svg>
+      </span>
+      Anime Card Clash
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="story.html">Story</a>
+      <a href="story-towers.html">Story Towers</a>
+      <a href="guides.html">Guides</a>
+      <a href="teams.html">Team Builds</a>
+      <a href="calculator.html">Calculator</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header style="padding:64px 0 20px;">
+    <div class="container">
+      <span class="eyebrow">Guide · Charted Formations</span>
+      <h1 style="margin-top:14px;">Team Builds</h1>
+      <p style="max-width:60ch; font-size:1.05rem;">
+        Every entry here comes from the community. Filter by tag, check the
+        difficulty pips before you commit, and read the synergy note to
+        understand <em>why</em> the team works, not just what's in it.
+      </p>
+    </div>
+  </header>
+
+  <section class="section-tight">
+    <div class="container">
+
+      <div class="teams-toolbar">
+        <div class="filter-group" id="filter-group"><!-- built from teams-data.js tags --></div>
+        <span class="team-count" id="team-count"></span>
+      </div>
+
+      <div class="teams-grid" id="teams-grid"><!-- cards render here --></div>
+      <div class="empty-state" id="empty-state" style="display:none;">
+        No teams match that tag yet. Add one in <code>js/teams-data.js</code>.
+      </div>
+
+      <div class="journal-card" style="margin-top:40px;">
+        <span class="eyebrow">For Contributors</span>
+        <h3 style="margin-top:12px;">Adding your own team takes under a minute</h3>
+        <p>
+          Open <code>js/teams-data.js</code> in any text editor. Copy the
+          template block at the top of the file, paste it into the
+          <code>TEAMS</code> list, fill in your Cards, and save. The page
+          you're looking at right now reads directly from that file — no
+          other code needs to change, and any new tags you use will show up
+          as filter chips automatically.
+        </p>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="container">
+    <span>Anime Card Clash Guide — built by players, for players.</span>
+    <span>Not affiliated with the game's publisher.</span>
+  </div>
+</footer>
+
+<script src="js/spores.js"></script>
+<script src="js/teams-data.js"></script>
+<script src="js/teams-render.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

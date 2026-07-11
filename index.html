@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Anime Card Clash — Guide</title>
+<meta name="description" content="A field guide for Anime Card Clash: story chapters, Card team builds, and the Omen luck calculator." />
+<meta name="theme-color" content="#0d1613" />
+
+<meta property="og:title" content="Anime Card Clash — Guide" />
+<meta property="og:description" content="Story chapters, Card team builds, and the Omen luck calculator for Anime Card Clash." />
+<meta property="og:type" content="website" />
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><circle cx=%2212%22 cy=%2212%22 r=%229%22 fill=%22%237fffb0%22/></svg>" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+<canvas id="spore-field" aria-hidden="true"></canvas>
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" fill="#7fffb0" opacity="0.15"/><circle cx="12" cy="12" r="4" fill="#7fffb0"/></svg>
+      </span>
+      Anime Card Clash
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="story.html">Story</a>
+      <a href="story-towers.html">Story Towers</a>
+      <a href="guides.html">Guides</a>
+      <a href="teams.html">Team Builds</a>
+      <a href="calculator.html">Calculator</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Unofficial Guide</span>
+        <h1>Chart the mire.<br />Bond a <span>Card</span>.<br />Survive the drowning.</h1>
+        <p class="hero-lede">
+          Everything a Anime Card Clash runner needs in one waterlogged journal: the
+          full story guide, community team builds, and the Omen Calculator
+          for reading your pull luck before you spend a single lantern-coin.
+        </p>
+        <div class="hero-actions">
+          <a href="story.html" class="btn btn-primary">Read the Story Guide</a>
+          <a href="teams.html" class="btn btn-ghost">Browse Team Builds</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong id="stat-teams">—</strong><span>Teams Charted</span></div>
+          <div><strong>7</strong><span>Story Chapters</span></div>
+          <div><strong>4</strong><span>Rarity Tiers</span></div>
+        </div>
+      </div>
+
+      <div class="hero-panel">
+        <span class="eyebrow">Field Note</span>
+        <blockquote style="margin-top:16px; font-family:var(--f-display); font-style:italic; font-size:1.05rem; color:var(--ink); border-left:2px solid var(--lantern); padding-left:18px;">
+          "The mere doesn't drown you all at once. It asks first. Answer wrong,
+          and it only asks again tomorrow."
+          <cite style="display:block; font-family:var(--f-mono); font-style:normal; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--ink-faint); margin-top:12px;">— Reedwarden's Almanac, Ch. 1</cite>
+        </blockquote>
+      </div>
+    </div>
+  </header>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="mire-divider">
+        <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="3" fill="none" stroke="#5eead4" stroke-width="1"/></svg>
+      </div>
+      <div class="grid-3">
+        <div class="journal-card feature-card">
+          <div class="icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 19V5a1 1 0 0 1 1-1h11l4 4v11a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1Z"/><path d="M16 4v4h4"/><path d="M8 12h8M8 16h5"/></svg>
+          </div>
+          <h3>Story Guide</h3>
+          <p>Seven chapters of Anime Card Clash's drowned history, faction by
+          faction, with lore notes for anything the game leaves unsaid.</p>
+          <a href="story.html" class="btn btn-ghost">Start Reading</a>
+        </div>
+        <div class="journal-card feature-card">
+          <div class="icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="7" r="2.4"/><circle cx="12" cy="17" r="3"/><path d="M9.6 9.8 15 15M10.4 6.9l4.6-.4"/></svg>
+          </div>
+          <h3>Team Builds</h3>
+          <p>Community-charted Card formations, filterable by tag, with
+          a difficulty rating so you know what you're piloting into.</p>
+          <a href="teams.html" class="btn btn-ghost">See Teams</a>
+        </div>
+        <div class="journal-card feature-card">
+          <div class="icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3v3M12 18v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M3 12h3M18 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/><circle cx="12" cy="12" r="4"/></svg>
+          </div>
+          <h3>Omen Calculator</h3>
+          <p>Enter your rate, pity count, and planned pulls to see your real
+          odds of a Mythic Card before the lantern-coins are spent.</p>
+          <a href="calculator.html" class="btn btn-ghost">Check Your Odds</a>
+        </div>
+        <div class="journal-card feature-card">
+          <div class="icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 3h9l3 3v15H6z"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>
+          </div>
+          <h3>Story Towers</h3>
+          <p>Team builds for the endless climb — budget lines, trait
+          requirements, and speedrun formations for pushing the pity line.</p>
+          <a href="story-towers.html" class="btn btn-ghost">Climb the Towers</a>
+        </div>
+        <div class="journal-card feature-card">
+          <div class="icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 21v-7a8 8 0 0 1 16 0v7"/><path d="M4 14h16"/><circle cx="12" cy="9" r="2.4"/></svg>
+          </div>
+          <h3>Dungeon Mode</h3>
+          <p>Fresh-start floor climbs, shared lives, modifier votes, and the
+          Dungeon Merchant — everything you need for your first descent.</p>
+          <a href="dungeon.html" class="btn btn-ghost">Enter the Depths</a>
+        </div>
+        <div class="journal-card feature-card">
+          <div class="icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="4" width="7" height="7"/><rect x="14" y="4" width="7" height="7"/><rect x="3" y="15" width="7" height="7"/><rect x="14" y="15" width="7" height="7"/></svg>
+          </div>
+          <h3>All Guides</h3>
+          <p>Raids, Battle Tower, Celestial Tower, World Boss, Limited Towers
+          Event, Underworld Invasion, Ranked, and the Lore campaign, all in one place.</p>
+          <a href="guides.html" class="btn btn-ghost">Browse Everything</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <span class="eyebrow">Known Factions</span>
+      <h2 style="margin-top:14px;">Who's fighting over the mire</h2>
+      <div class="faction-strip" style="margin-top:28px;">
+        <div class="faction-pill">
+          <h4>The Reed Cards</h4>
+          <p>Bonded protectors of the drowned villages. Slow, stubborn, hard to kill.</p>
+        </div>
+        <div class="faction-pill">
+          <h4>The Sunken Choir</h4>
+          <p>Cultists who sing the mere's name. Source of most Mythic-tier Cards.</p>
+        </div>
+        <div class="faction-pill">
+          <h4>Ashlight Covenant</h4>
+          <p>Lantern-keepers who trade light for favors. Neutral, mostly.</p>
+        </div>
+        <div class="faction-pill">
+          <h4>The Quiet Tide</h4>
+          <p>What's left of the kingdom that drowned first. They remember everything.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="container">
+    <span>Anime Card Clash Guide — built by players, for players.</span>
+    <span>Not affiliated with the game's publisher.</span>
+  </div>
+</footer>
+
+<script src="js/spores.js"></script>
+<script src="js/teams-data.js"></script>
+<script src="js/main.js"></script>
+<script>
+  document.getElementById("stat-teams").textContent =
+    typeof TEAMS !== "undefined" ? TEAMS.length : "—";
+</script>
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dungeon Mode Guide — Anime Card Clash</title>
+<meta name="description" content="How Dungeon Mode works in Anime Card Clash: fresh-start rolls, floor scaling, lives, modifiers, the Dungeon Merchant, and tips for pushing further floors." />
+<meta name="theme-color" content="#0d1613" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><circle cx=%2212%22 cy=%2212%22 r=%229%22 fill=%22%237fffb0%22/></svg>" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+<canvas id="spore-field" aria-hidden="true"></canvas>
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" fill="#7fffb0" opacity="0.15"/><circle cx="12" cy="12" r="4" fill="#7fffb0"/></svg>
+      </span>
+      Anime Card Clash
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="story.html">Story</a>
+      <a href="story-towers.html">Story Towers</a>
+      <a href="guides.html">Guides</a>
+      <a href="teams.html">Team Builds</a>
+      <a href="calculator.html">Calculator</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header style="padding:64px 0 20px;">
+    <div class="container">
+      <span class="eyebrow">Guide · The Drowned Depths</span>
+      <h1 style="margin-top:14px;">Dungeon Mode</h1>
+      <p style="max-width:62ch; font-size:1.05rem;">
+        Dungeon Mode is Anime Card Clash's PvE floor-climb: everything in
+        your normal inventory gets locked away, and you start from nothing,
+        building a fresh deck out of Dungeon Instant Rolls as you fight
+        your way down. Whatever you find down there stays down there — but
+        the coins, the merchant, and the luck you build up along the way
+        make every run worth the trip.
+      </p>
+    </div>
+  </header>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="mire-divider">
+        <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="3" fill="none" stroke="#5eead4" stroke-width="1"/></svg>
+      </div>
+      <span class="eyebrow">Core Mechanics</span>
+      <h2 style="margin-top:14px; margin-bottom:24px;">What makes a dungeon run different</h2>
+
+      <div class="grid-3">
+        <div class="journal-card">
+          <span class="eyebrow">Fresh Start</span>
+          <h3 style="margin-top:12px;">Nothing carries in</h3>
+          <p style="font-size:0.9rem;">Your main inventory is disabled for
+          the run. You build a brand-new deck using Dungeon Instant Rolls,
+          starting with a batch of 100,000 the moment you step in.</p>
+        </div>
+        <div class="journal-card">
+          <span class="eyebrow">Nothing carries out</span>
+          <h3 style="margin-top:12px;">Everything stays down there</h3>
+          <p style="font-size:0.9rem;">Cards, levels, and traits you pull
+          inside the dungeon are dungeon-only. Your original card levels
+          and traits never apply here, and nothing you earn transfers back
+          to your main collection.</p>
+        </div>
+        <div class="journal-card">
+          <span class="eyebrow">Independent Luck</span>
+          <h3 style="margin-top:12px;">A separate luck stat</h3>
+          <p style="font-size:0.9rem;">Dungeon luck is tracked on its own —
+          it only moves with dungeon-level upgrades and active modifiers,
+          not anything from your main profile.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <span class="eyebrow">Floor Progression</span>
+      <h2 style="margin-top:14px; margin-bottom:24px;">How the climb scales</h2>
+
+      <div class="grid-2">
+        <div class="journal-card">
+          <h3>Per-floor rewards</h3>
+          <div class="breakdown-row"><span>Clear a floor</span><span>More Dungeon Instant Rolls + 20 Mythical Books</span></div>
+          <div class="breakdown-row"><span>Floors 1–10</span><span>Reward items ×1</span></div>
+          <div class="breakdown-row"><span>Floors 11–20</span><span>Reward items ×2</span></div>
+          <div class="breakdown-row"><span>Every 10 floors</span><span>Merge Machine spawns</span></div>
+          <p class="field-hint">Reward tiers keep stacking the deeper you
+          go, so the value of each individual floor climbs even as the
+          fights get harder.</p>
+        </div>
+        <div class="journal-card">
+          <h3>Enemy scaling</h3>
+          <div class="breakdown-row"><span>Enemies per floor</span><span>1–4 per player, minimum 1</span></div>
+          <div class="breakdown-row"><span>Max enemy team size</span><span>Up to 6 cards</span></div>
+          <div class="breakdown-row"><span>Deeper floors</span><span>Higher Luck stat per floor reached</span></div>
+          <p class="field-hint">Everyone in your dungeon party has to reach
+          the next floor's entrance before the next floor actually begins —
+          no one can pull the group ahead alone.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <span class="eyebrow">Party &amp; Survival</span>
+      <h2 style="margin-top:14px; margin-bottom:24px;">Lives, co-op, and AFK runs</h2>
+
+      <div class="grid-3">
+        <div class="journal-card">
+          <span class="eyebrow">Co-op</span>
+          <h3 style="margin-top:12px;">1–4 players</h3>
+          <p style="font-size:0.9rem;">Dungeons support solo play or a
+          party of up to four, and the whole group shares one pool of
+          lives for the run.</p>
+        </div>
+        <div class="journal-card">
+          <span class="eyebrow">Lives</span>
+          <h3 style="margin-top:12px;">Shared, and limited</h3>
+          <p style="font-size:0.9rem;">A lost battle costs the party one
+          life. When the shared pool runs out, the dungeon ends and you
+          have to start a fresh one to keep climbing.</p>
+        </div>
+        <div class="journal-card">
+          <span class="eyebrow">AFK Mode</span>
+          <h3 style="margin-top:12px;">Toggle it on or off</h3>
+          <p style="font-size:0.9rem;">AFK dungeon settings can auto-battle
+          the next enemy, auto-teleport to the next floor, and auto-use
+          roll packs, so a run can progress with minimal input if you set
+          it up first.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <span class="eyebrow">Milestones</span>
+      <h2 style="margin-top:14px; margin-bottom:24px;">What to expect on the way down</h2>
+
+      <div class="grid-2">
+        <div class="journal-card">
+          <h3>Bosses &amp; rewards</h3>
+          <div class="breakdown-row"><span>Mini Boss (every 5 floors)</span><span>+20 bonus Dungeon Coins</span></div>
+          <div class="breakdown-row"><span>Boss (every 10 floors)</span><span>+45 bonus Dungeon Coins</span></div>
+          <div class="breakdown-row"><span>Certain floor thresholds</span><span>Unlock exclusive Giant cards at the Merchant</span></div>
+          <p class="field-hint">Giant cards unlocked this way are usually
+          limited to a single purchase each, so don't expect to stock up.</p>
+        </div>
+        <div class="journal-card">
+          <h3>Modifier votes</h3>
+          <div class="breakdown-row"><span>Trigger</span><span>Every 5 floors</span></div>
+          <div class="breakdown-row"><span>Choice</span><span>Party votes on 1 of 3 random buffs</span></div>
+          <div class="breakdown-row"><span>Duration</span><span>Applies for the rest of the run</span></div>
+          <p class="field-hint">Vote as a group — the chosen modifier locks
+          in for everyone until the run ends, win or lose.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <span class="eyebrow">The Dungeon Merchant</span>
+      <h2 style="margin-top:14px; margin-bottom:24px;">Spending what you earn</h2>
+      <div class="journal-card">
+        <p>
+          The Dungeon Merchant only accepts Dungeon Coins, which you build
+          up from mini-boss and boss clears as you descend. Coins can be
+          spent on Dungeon Craftable Cards — cards that only become
+          rollable in your dungeon deck once you've crafted them — along
+          with the exclusive Giant cards that unlock as you pass certain
+          floor thresholds. Because most of those Giant cards have a stock
+          of one, it's worth deciding in advance which unlock you actually
+          want before you spend down your coin stash.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <span class="eyebrow">Dungeon Variants</span>
+      <h2 style="margin-top:14px; margin-bottom:24px;">Titan Dungeon &amp; Bizarre Dungeon</h2>
+
+      <div class="grid-2">
+        <div class="journal-card">
+          <span class="eyebrow">Titan Dungeon</span>
+          <h3 style="margin-top:12px;">Difficulty challenges &amp; modifiers</h3>
+          <p style="font-size:0.9rem;">A harder variant layered on top of
+          the base dungeon loop, with its own difficulty challenges and a
+          dedicated modifier list. Treat it as the place to push a deck
+          you've already proven can clear a standard run comfortably.</p>
+        </div>
+        <div class="journal-card">
+          <span class="eyebrow">Bizarre Dungeon</span>
+          <h3 style="margin-top:12px;">Stand mechanics</h3>
+          <p style="font-size:0.9rem;">Introduces its own special "Stand"
+          mechanic on top of the usual difficulty challenges and modifier
+          lists, changing how cards interact compared to a normal or Titan
+          run.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <span class="eyebrow">Tutorial</span>
+      <h2 style="margin-top:14px; margin-bottom:24px;">Running your first dungeon</h2>
+
+      <div>
+        <article class="chapter">
+          <span class="chapter-num">Step 01</span>
+          <h2>Enter with a clear goal</h2>
+          <p>
+            Decide up front whether you're chasing floor depth, Dungeon
+            Coins, or a specific Giant card unlock. Your starting 100,000
+            Dungeon Instant Rolls go further if you're not splitting focus
+            between three goals at once.
+          </p>
+        </article>
+
+        <article class="chapter">
+          <span class="chapter-num">Step 02</span>
+          <h2>Build your fresh deck fast</h2>
+          <p>
+            Since none of your main-game cards apply, spend your opening
+            rolls on the strongest deck you can assemble immediately rather
+            than saving rolls for later — every floor you clear pays out
+            more rolls anyway, so the deck compounds as you go.
+          </p>
+        </article>
+
+        <article class="chapter">
+          <span class="chapter-num">Step 03</span>
+          <h2>Coordinate lives with your party</h2>
+          <p>
+            Because the whole party shares one pool of lives, agree on when
+            to play safe versus when to push a risky floor. One bad pull
+            for one player still costs everyone a life.
+          </p>
+        </article>
+
+        <article class="chapter">
+          <span class="chapter-num">Step 04</span>
+          <h2>Vote modifiers with the run in mind</h2>
+          <p>
+            When the every-5-floor modifier vote comes up, pick the buff
+            that supports the goal you set in Step 01 — a coin-farming run
+            and a depth-farming run usually want different modifiers.
+          </p>
+        </article>
+
+        <article class="chapter">
+          <span class="chapter-num">Step 05</span>
+          <h2>Spend at the Merchant before you leave</h2>
+          <p>
+            Dungeon Coins don't do anything sitting unspent between runs.
+            Check the Merchant for any newly unlocked Giant cards before
+            you back out, since some of those slots only carry a single
+            unit in stock.
+          </p>
+        </article>
+      </div>
+
+      <div class="journal-card" style="margin-bottom:24px;">
+        <span class="eyebrow">Want teams, not mechanics?</span>
+        <h3 style="margin-top:12px;">Jump to charted Dungeon decks</h3>
+        <p>This page covers how Dungeon Mode works. For actual Bizarre and
+        Titan dungeon team builds with floor thresholds, see
+        <a href="dungeon-teams.html">Dungeon Teams</a>.</p>
+      </div>
+      <div class="lore-note" style="margin-top:12px;">
+        <strong>Field Note</strong>
+        Mechanics on this page are summarized from the community-run
+        <a href="https://anime-card-clash-official.fandom.com/wiki/Dungeon_Mode" target="_blank" rel="noopener">Anime Card Clash Wiki — Dungeon Mode</a>.
+        Numbers can shift between game updates, so treat exact figures as a
+        guideline rather than a guarantee.
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="container">
+    <span>Anime Card Clash Guide — built by players, for players.</span>
+    <span>Not affiliated with the game's publisher.</span>
+  </div>
+</footer>
+
+<script src="js/spores.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

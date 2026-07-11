@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Story Mode Guide — Anime Card Clash</title>
+<meta name="description" content="Story Mode team builds for Anime Card Clash, organized by map in progression order, with card requirements and tips for each Celestial stage." />
+<meta name="theme-color" content="#0d1613" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><circle cx=%2212%22 cy=%2212%22 r=%229%22 fill=%22%237fffb0%22/></svg>" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/pages.css" />
+
+</head>
+<body>
+<canvas id="spore-field" aria-hidden="true"></canvas>
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" fill="#7fffb0" opacity="0.15"/><circle cx="12" cy="12" r="4" fill="#7fffb0"/></svg>
+      </span>
+      Anime Card Clash
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="story.html">Story</a>
+      <a href="story-towers.html">Story Towers</a>
+      <a href="guides.html">Guides</a>
+      <a href="teams.html">Team Builds</a>
+      <a href="calculator.html">Calculator</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header style="padding:64px 0 20px;">
+    <div class="container">
+      <span class="eyebrow">Guide · Story Mode</span>
+      <h1 style="margin-top:14px;">Story Mode</h1>
+      <p style="max-width:64ch; font-size:1.05rem;">Team builds for every charted Story Mode map, in the order you'll actually meet them. Each card lists exactly what your cards need to be — level, trait, border — plus the tips the original builder left behind.</p>
+    </div>
+  </header>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="subnav"><a href="story.html" class="current">Story</a><a href="story-towers.html">Story Towers</a><a href="dungeon-teams.html">Dungeon Teams</a><a href="raids.html">Raids</a><a href="battle-tower.html">Battle Tower</a><a href="celestial-tower.html">Celestial Tower</a><a href="world-boss.html">World Boss</a><a href="limited-towers.html">Limited Towers</a><a href="underworld-invasion.html">Underworld</a><a href="ranked.html">Ranked</a></div>
+      <div id="story-guides"></div>
+      <script>renderGuides({ containerId: "story-guides", category: "story", mode: "sections" });</script>
+      <div class="lore-note" style="margin-top:8px;">
+        <strong>Map Order</strong>
+        Maps are ordered to match the in-game Story Mode progression listed on the
+        <a href="https://anime-card-clash-official.fandom.com/wiki/Story_Mode" target="_blank" rel="noopener">Anime Card Clash Wiki</a>.
+        Clover Hideout isn't listed there yet (likely a newer map), so it's placed last until the wiki catches up.
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="container">
+    <span>Anime Card Clash Guide — built by players, for players.</span>
+    <span>Not affiliated with the game's publisher.</span>
+  </div>
+</footer>
+
+<script src="js/spores.js"></script>
+<script src="js/guides-data.js"></script>
+<script src="js/guides-render.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

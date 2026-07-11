@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lore — Anime Card Clash</title>
+<meta name="description" content="Fan lore for Anime Card Clash: seven chapters of drowned-kingdom history and faction lore, separate from the in-game Story Mode team guide." />
+<meta name="theme-color" content="#0d1613" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><circle cx=%2212%22 cy=%2212%22 r=%229%22 fill=%22%237fffb0%22/></svg>" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/pages.css" />
+</head>
+<body>
+<canvas id="spore-field" aria-hidden="true"></canvas>
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" fill="#7fffb0" opacity="0.15"/><circle cx="12" cy="12" r="4" fill="#7fffb0"/></svg>
+      </span>
+      Anime Card Clash
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="story.html">Story</a>
+      <a href="story-towers.html">Story Towers</a>
+      <a href="guides.html">Guides</a>
+      <a href="teams.html">Team Builds</a>
+      <a href="calculator.html">Calculator</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header style="padding:64px 0 20px;">
+    <div class="container">
+      <span class="eyebrow">Lore · Chapter Index</span>
+      <p style="margin-top:8px;"><a href="story.html" style="font-family:var(--f-mono); font-size:0.8rem; color:var(--moss-glow);">← Looking for Story Mode team builds instead?</a></p>
+      <h1 style="margin-top:14px;">The Reedwarden's Almanac</h1>
+      <p style="max-width:60ch; font-size:1.05rem;">
+        A chapter-by-chapter account of how the kingdom of Vessport went
+        under, who bonded with what came up out of the water, and why the
+        mire keeps asking questions of everyone who wades in.
+      </p>
+    </div>
+  </header>
+
+  <section class="section-tight">
+    <div class="container story-layout">
+
+      <nav class="toc" aria-label="Table of contents">
+        <a href="#ch1">01 · The Last Dry Year</a>
+        <a href="#ch2">02 · The First Bonding</a>
+        <a href="#ch3">03 · The Reed Cards</a>
+        <a href="#ch4">04 · The Sunken Choir</a>
+        <a href="#ch5">05 · Ashlight and its Debts</a>
+        <a href="#ch6">06 · The Quiet Tide</a>
+        <a href="#ch7">07 · What the Mere Wants</a>
+      </nav>
+
+      <div>
+
+        <article class="chapter" id="ch1">
+          <span class="chapter-num">Chapter 01</span>
+          <h2>The Last Dry Year</h2>
+          <p>
+            Vessport was a trade kingdom built on a floodplain, and everyone
+            who lived there knew the water would eventually take it back —
+            they simply expected centuries, not a season. The chronicles
+            call the final year "dry" only because the rain hadn't started
+            yet. It's the last entry written before the ink itself began to
+            run.
+          </p>
+          <p>
+            Court records from that year describe unexplained lantern-outages,
+            wells that reversed their flow, and a growing number of
+            townsfolk who stopped sleeping altogether, claiming something
+            under the floorboards was "counting." Historians now believe
+            this was the mere testing its reach before the flood proper.
+          </p>
+          <blockquote>
+            "We did not drown in a night. We drowned in the time it takes to
+            decide not to leave."
+            <cite>— Court Archivist, final entry</cite>
+          </blockquote>
+          <div class="lore-note">
+            <strong>Lore Note</strong>
+            The in-game "Founder's Bell" you can ring in the Vessport ruins
+            plays the exact toll pattern described in this chapter's court
+            records — one of the few sound cues confirmed to be historically
+            accurate within the game's own fiction.
+          </div>
+        </article>
+
+        <article class="chapter" id="ch2">
+          <span class="chapter-num">Chapter 02</span>
+          <h2>The First Bonding</h2>
+          <p>
+            When the floodwaters finally came, they didn't simply rise —
+            they brought something with them. Survivors reported spirits
+            rising out of the new lake, formless until a drowning person
+            reached for one. Those who reached and held on became the first
+            Cards. Those who let go were never seen again.
+          </p>
+          <p>
+            The bonding wasn't gentle. Early Cards describe it less as a
+            partnership and more as a negotiated survival — the spirit kept
+            you breathing, and in exchange you carried it, fed it, and
+            eventually let it use your hands. That uneasy trade is still the
+            basis of every Card bond in the game today.
+          </p>
+          <div class="lore-note">
+            <strong>Lore Note</strong>
+            This is why every Card's bio in-game lists a "bonded name" and
+            a separate "given name" — the given name is who they were, the
+            bonded name is what the mere calls them now.
+          </div>
+        </article>
+
+        <article class="chapter" id="ch3">
+          <span class="chapter-num">Chapter 03</span>
+          <h2>The Reed Cards</h2>
+          <p>
+            The first organized faction, formed by survivors who bonded with
+            slow, patient spirits — the kind that held riverbanks together
+            rather than tearing them apart. Reed Cards don't hit hard, but
+            nothing outlasts them, and in a world that rewards patience over
+            speed, that made them the closest thing Vessport has to a
+            standing army.
+          </p>
+          <p>
+            Their creed is short enough to fit on the practice-yard banners
+            still standing in the flooded district: hold the line, let the
+            water do the rest. It's also good gameplay advice — most
+            beginner-friendly team builds lean on a Reed Card front line
+            for exactly this reason.
+          </p>
+        </article>
+
+        <article class="chapter" id="ch4">
+          <span class="chapter-num">Chapter 04</span>
+          <h2>The Sunken Choir</h2>
+          <p>
+            Where the Reed Cards sought to endure the mere, the Sunken
+            Choir sought to please it. They sing to the deepest parts of the
+            flood in a language no living scholar has fully translated, and
+            in return, the mere occasionally answers with something
+            powerful, unstable, and hungry. Nearly all Mythic-tier Cards
+            trace their bonding back to a Choir ritual.
+          </p>
+          <blockquote>
+            "Ask nicely enough, and the water gives you a monster. Ask too
+            many times, and it keeps the favor."
+            <cite>— Choir defector's confession, undated</cite>
+          </blockquote>
+          <div class="lore-note">
+            <strong>Lore Note</strong>
+            The game's pity system is a direct mechanical nod to this — the
+            "favor" the mere keeps is the pull counter resetting only once
+            you're guaranteed a result, win or lose.
+          </div>
+        </article>
+
+        <article class="chapter" id="ch5">
+          <span class="chapter-num">Chapter 05</span>
+          <h2>Ashlight and its Debts</h2>
+          <p>
+            The Ashlight Covenant didn't bond with the mere at all — they
+            bonded with light itself, or at least a stubborn refusal to let
+            it go out. Their lanterns are the only reliable illumination in
+            the flooded districts, and they charge for it, in favors, in
+            salvage, and occasionally in years.
+          </p>
+          <p>
+            Neither friend nor enemy to the other factions, Ashlight
+            traders show up in nearly every questline as the toll-keeper
+            between zones. Players tend to either love or resent them
+            depending entirely on how much salvage they've had to hand over.
+          </p>
+        </article>
+
+        <article class="chapter" id="ch6">
+          <span class="chapter-num">Chapter 06</span>
+          <h2>The Quiet Tide</h2>
+          <p>
+            Not everyone who drowned in Vessport became a Card or a
+            monster. Some simply stayed, unbonded, unchanged, and mostly
+            silent — the Quiet Tide. They remember the kingdom exactly as it
+            was, which makes them the most reliable source of pre-flood
+            history and the most unsettling faction to actually talk to.
+          </p>
+          <div class="lore-note">
+            <strong>Lore Note</strong>
+            Nearly every "hidden lore" collectible in the game is voiced, in
+            text, by an unnamed member of the Quiet Tide. If a note reads as
+            oddly specific about a building that no longer exists, that's
+            why.
+          </div>
+        </article>
+
+        <article class="chapter" id="ch7">
+          <span class="chapter-num">Chapter 07</span>
+          <h2>What the Mere Wants</h2>
+          <p>
+            No faction, including the Choir, claims to actually know what
+            the mere is asking for when it "counts," tests, and occasionally
+            rewards the people living on top of it. The closest thing to a
+            consensus, across four factions who agree on almost nothing
+            else, is that it isn't finished asking.
+          </p>
+          <p>
+            That's the thread every current story update pulls on, and
+            it's worth keeping an eye on future chapters — whatever the
+            mere wants, the game seems to be building toward finally
+            answering it.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="container">
+    <span>Anime Card Clash Guide — built by players, for players.</span>
+    <span>Not affiliated with the game's publisher.</span>
+  </div>
+</footer>
+
+<script src="js/spores.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
