@@ -21,7 +21,7 @@
       speed: 0.15 + Math.random() * 0.35,
       drift: (Math.random() - 0.5) * 0.3,
       phase: Math.random() * Math.PI * 2,
-      glow: Math.random() > 0.82 ? "#f0b45c" : "#7fffb0",
+      glow: Math.random() > 0.82 ? "#f2935c" : "#ff6f61",
       alpha: 0.15 + Math.random() * 0.4,
     };
   }

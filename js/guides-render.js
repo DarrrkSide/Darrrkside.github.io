@@ -5,7 +5,7 @@
    "tabs" (variant tabs, used by Dungeon), "chips" (filter chips by
    location, used by Battle Tower), or "grid" (flat list, everything else). */
 (function (global) {
-  const AVATAR_COLORS = ["#5eead4", "#f0b45c", "#d9736b", "#7fffb0", "#9fada4"];
+  const AVATAR_COLORS = ["#ff6f61", "#f2935c", "#c94f45", "#ff9285", "#a08c88"];
 
   function escapeHTML(str) {
     const div = document.createElement("div");
@@ -29,7 +29,8 @@
   function avatarHTML(name) {
     const url = (typeof CARD_IMAGES !== "undefined" && CARD_IMAGES[name]) || null;
     if (url) {
-      return `<span class="card-avatar"><img src="${escapeHTML(url)}" alt="${escapeHTML(name)}" loading="lazy" /></span>`;
+      const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+      return `<span class="card-avatar"><img src="images/cards/${escapeHTML(slug)}.png" data-fallback="${escapeHTML(url)}" alt="${escapeHTML(name)}" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src=this.dataset.fallback;" /></span>`;
     }
     return `<span class="card-avatar card-avatar-fallback" style="background:${colorFor(name)}22;color:${colorFor(name)};border-color:${colorFor(name)}55;">${escapeHTML(initials(name))}</span>`;
   }

@@ -50,7 +50,7 @@
     return `
       <article class="card-tile" data-role="${escapeHTML(card.role)}" data-pool="${escapeHTML(card.pool)}" data-name="${escapeHTML(card.name.toLowerCase())} ${escapeHTML((card.altName || "").toLowerCase())}">
         <div class="card-tile-art">
-          <img src="${escapeHTML(card.image)}" alt="${escapeHTML(card.name)}" loading="lazy" />
+          <img src="images/cards/${escapeHTML(card.id)}.png" data-fallback="${escapeHTML(card.image)}" alt="${escapeHTML(card.name)}" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src=this.dataset.fallback;" />
         </div>
         <div class="card-tile-body">
           <div class="card-tile-head">
