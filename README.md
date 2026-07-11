@@ -1,5 +1,28 @@
 # Hollowmere — Field Guide
 
+<p align="right"><strong>By Yokotu</strong></p>
+
+A static game-guide site for Anime Card Clash. This fork includes:
+
+- Localized card art (images/ folder) so pages load offline.
+- A light red theme and a Discord invite button in the bottom-right corner of every page.
+- The "Who's fighting over the mire" homepage section removed for a cleaner layout.
+
+How to update cards
+
+1. Open `js/cards-data.js` and add or edit card objects in the `CARDS` array.
+2. Images referenced from the wiki are downloaded into `images/` if present; the site will prefer local images and fall back to the wiki CDN when necessary.
+
+Running locally
+
+Open `index.html` in a browser or run a small static server (e.g., `python -m http.server`) and visit `http://localhost:8000`.
+
+Notes
+
+- Theme colors are controlled in `css/style.css` under `:root` variables.
+- The All Cards page attempts to load `images/<filename>` first. If a local image is missing it will load the remote wiki image.
+- A complete zip with these changes is available in the session artifacts directory.
+
 A static game-guide site: story chapters and a full Card database. No build
 step, no backend — plain HTML/CSS/JS, ready for GitHub Pages.
 

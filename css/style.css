@@ -6,29 +6,29 @@
    ============================================================ */
 
 :root {
-  /* --- Color: swamp-lantern palette --- */
-  --bg: #070d0b;
-  --bg-alt: #0d1613;
-  --panel: #101d19;
-  --panel-raised: #142621;
-  --line: rgba(232, 226, 208, 0.09);
-  --line-strong: rgba(232, 226, 208, 0.18);
+ /* --- Color: light red palette (user requested reddish/light-red theme) --- */
+ --bg: #fff6f6;
+ --bg-alt: #ffeeee;
+ --panel: #fff1f2;
+ --panel-raised: #ffe6e6;
+ --line: rgba(120, 18, 29, 0.06);
+ --line-strong: rgba(120, 18, 29, 0.14);
 
-  --ink: #e8e2d0;
-  --ink-dim: #9fada4;
-  --ink-faint: #6b7a72;
+ --ink: #2b0b0f;
+ --ink-dim: #6b2b32;
+ --ink-faint: #8f4a52;
 
-  --moss: #5eead4;
-  --moss-glow: #7fffb0;
-  --lantern: #f0b45c;
-  --lantern-dim: #b6803a;
-  --blood-moth: #d9736b;
+ --moss: #ff6b6b; /* accent replaced with soft red */
+ --moss-glow: #ff9a9a;
+ --lantern: #ff8a8a;
+ --lantern-dim: #d66b6b;
+ --blood-moth: #d14b4b;
 
-  /* rarity marks */
-  --r-common: #8a9a90;
-  --r-uncommon: #4f9d86;
-  --r-rare: #f0b45c;
-  --r-mythic: #7fffb0;
+ /* rarity marks (shifted toward warm reds/oranges) */
+ --r-common: #c1a3a5;
+ --r-uncommon: #ff7b7b;
+ --r-rare: #ffb37b;
+ --r-mythic: #ffd1d1;
 
   /* --- Type --- */
   --f-display: "Fraunces", "Iowan Old Style", Georgia, serif;
@@ -36,7 +36,7 @@
   --f-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
 
   --radius: 3px;
-  --shadow-deep: 0 20px 60px rgba(0, 0, 0, 0.55);
+ --shadow-deep: 0 20px 60px rgba(0, 0, 0, 0.08);
 }
 
 * { box-sizing: border-box; }
@@ -339,6 +339,33 @@ footer .container {
 }
 
 /* ============ Utility ============ */
+
+/* Card title & byline tweaks requested by user: make title larger and provide a right-aligned byline */
+.card-tile-head h3 { font-size: 1.35rem; margin: 0; color: var(--ink); }
+.card-tile-head .card-altname { display: block; font-size: 0.88rem; color: var(--ink-dim); margin-top:4px; }
+.byline { display: block; text-align: right; font-family: var(--f-mono); font-size: 0.78rem; color: var(--ink-faint); }
+
+/* Discord floating action button (fixed to bottom-right, moves with page) */
+.discord-fab {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 9999;
+  background: var(--moss);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 999px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  text-decoration: none;
+  border: 1px solid rgba(0,0,0,0.06);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.discord-fab:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(0,0,0,0.18); }
+.discord-fab svg { width: 18px; height: 18px; display: block; }
+
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 @media (max-width: 860px) {

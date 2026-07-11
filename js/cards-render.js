@@ -47,10 +47,12 @@
       ? `<span class="badge tier-${card.tier.replace("+", "plus").toLowerCase()}">${escapeHTML(TIER_LABEL[card.tier] || card.tier)}</span>`
       : `<span class="badge tier-none">Unranked</span>`;
 
+    const localName = (card.image || '').split('/').pop().split('?')[0];
+    const localSrc = localName ? `images/${localName}` : escapeHTML(card.image);
     return `
       <article class="card-tile" data-role="${escapeHTML(card.role)}" data-pool="${escapeHTML(card.pool)}" data-name="${escapeHTML(card.name.toLowerCase())} ${escapeHTML((card.altName || "").toLowerCase())}">
         <div class="card-tile-art">
-          <img src="${escapeHTML(card.image)}" alt="${escapeHTML(card.name)}" loading="lazy" />
+          <img src="${localSrc}" alt="${escapeHTML(card.name)}" loading="lazy" onerror="this.onerror=null;this.src='${escapeHTML(card.image)}'" />
         </div>
         <div class="card-tile-body">
           <div class="card-tile-head">
