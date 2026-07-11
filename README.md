@@ -1,22 +1,40 @@
 # Hollowmere — Field Guide
 
-A static game-guide site: story chapters, community team builds, and a
-pity/luck calculator. No build step, no backend — plain HTML/CSS/JS, ready
-for GitHub Pages.
+A static game-guide site: story chapters and a full Card database. No build
+step, no backend — plain HTML/CSS/JS, ready for GitHub Pages.
 
-## Adding a team (this is the whole workflow)
+## Adding a card (this is the whole workflow)
 
-1. Open `js/teams-data.js`.
-2. Copy the template block near the top of the file (between the `----`
-   markers).
-3. Paste it into the `TEAMS` list, above the closing `];`.
-4. Fill in the fields — name, rarity, members, synergy, etc. The comments
-   above the template explain each one.
-5. Save. Open `teams.html` (or refresh it) to see the new card. Any new
-   tags you use automatically become filter chips — nothing else to edit.
+1. Open `js/cards-data.js`.
+2. Copy an existing card object in the `CARDS` array as a template.
+3. Fill in the fields — `name`, `role` (`"Attacker"` or `"Support"`), `pool`,
+   `tier` (or `null` if it isn't on the community tier list), `image` (the
+   real wikia CDN URL — see below), `ability`, and `stats` per rarity.
+4. Save. Open `cards.html` (or refresh it) to see the new tile. Role/pool
+   filter chips are built automatically from whatever values are in the
+   data — nothing else to edit.
 
-That file is the only thing you need to touch to keep the team list
-current. Everything else (cards, filters, layout) renders itself from it.
+That file is the only thing you need to touch to keep the card list
+current. Everything else (grid, filters, search, stat tabs) renders itself
+from it.
+
+### Pulling card images from the wiki
+
+Fandom's image URLs (`static.wikia.nocookie.net/.../revision/latest?cb=...`)
+are content-hashed per file — they can't be guessed from a card name, so
+each one has to be looked up. Two ways to get the real URL for a card:
+
+- Open the card's file page on the wiki, e.g.
+  `https://anime-card-clash.fandom.com/wiki/File:Card_Name.png`, and copy
+  the "Original file" link.
+- Or query the MediaWiki API directly:
+  `https://anime-card-clash.fandom.com/api.php?action=query&titles=File:Card_Name.png&prop=imageinfo&iiprop=url&format=json`
+  — the `url` field in the response is the real, working image URL.
+
+The [All Cards wiki page](https://anime-card-clash.fandom.com/wiki/All_Cards)
+is the source for everything currently in `cards-data.js`; it doesn't have
+every card in the game documented yet, so `cards.html` will grow as the
+wiki does.
 
 ## Running it locally
 
@@ -45,13 +63,11 @@ GitHub Pages redeploys automatically — no rebuild step.
 ```
 index.html          Home page
 story.html           Story guide (7 chapters)
-teams.html            Team builds (renders from teams-data.js)
-calculator.html        Omen pity/luck calculator
+cards.html            All Cards database (renders from cards-data.js)
 css/style.css          Design tokens + shared components
 css/pages.css           Page-specific styles
-js/teams-data.js         <- edit this to add teams
-js/teams-render.js        Renders teams-data.js into cards (don't need to touch)
-js/calculator.js           Pity math for the calculator page
+js/cards-data.js         <- edit this to add/update cards
+js/cards-render.js        Renders cards-data.js into the grid (don't need to touch)
 js/spores.js                 Ambient background animation
 js/main.js                    Nav + small shared behavior
 ```

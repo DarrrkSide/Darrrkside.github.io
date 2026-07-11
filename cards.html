@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Ranked Guide — Anime Card Clash</title>
-<meta name="description" content="Ranked Mode team builds for Anime Card Clash — community-contributed, coming soon." />
+<title>All Cards — Anime Card Clash</title>
+<meta name="description" content="Every documented Anime Card Clash card in one gallery: art, base odds, HP/DMG by rarity, abilities, and tier — sourced from the community wiki." />
 <meta name="theme-color" content="#0d1613" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><circle cx=%2212%22 cy=%2212%22 r=%229%22 fill=%22%237fffb0%22/></svg>" />
 
@@ -14,7 +14,6 @@
 
 <link rel="stylesheet" href="css/style.css" />
 <link rel="stylesheet" href="css/pages.css" />
-
 </head>
 <body>
 <canvas id="spore-field" aria-hidden="true"></canvas>
@@ -41,26 +40,37 @@
 <div class="wrap">
   <header style="padding:64px 0 20px;">
     <div class="container">
-      <span class="eyebrow">Guide · Ranked</span>
-      <h1 style="margin-top:14px;">Ranked</h1>
-      <p style="max-width:64ch; font-size:1.05rem;">PvP defense and battle teams for Ranked Mode. This page is set up and ready — it just needs the first submissions.</p>
+      <span class="eyebrow">Card Database</span>
+      <h1 style="margin-top:14px;">All Cards</h1>
+      <p style="max-width:64ch; font-size:1.05rem;">
+        Every Card documented on the Anime Card Clash wiki, with art, base pull odds,
+        HP/DMG scaling by rarity, and ability text. Tier badges are pulled from the
+        community Meta Attacker / Support tier list where a card has been ranked —
+        this isn't a tier list itself, just a full card reference.
+      </p>
     </div>
   </header>
 
   <section class="section-tight">
     <div class="container">
-      <div class="subnav"><a href="story.html">Story</a><a href="story-towers.html">Story Towers</a><a href="dungeon-teams.html">Dungeon Teams</a><a href="raids.html">Raids</a><a href="battle-tower.html">Battle Tower</a><a href="celestial-tower.html">Celestial Tower</a><a href="world-boss.html">World Boss</a><a href="limited-towers.html">Limited Towers</a><a href="underworld-invasion.html">Underworld</a><a href="ranked.html" class="current">Ranked</a></div>
-      <div id="ranked-guides"></div>
-      
-      <div class="journal-card" style="margin-top:24px;">
-        <span class="eyebrow">For Contributors</span>
-        <h3 style="margin-top:12px;">Nothing charted here yet</h3>
-        <p>
-          Ranked teams haven't been added yet. Open <code>js/guides-data.js</code>,
-          copy an existing <code>add("battletower", ...)</code> block near the
-          bottom of the file, change the category to <code>"ranked"</code>, and
-          fill in your team — it'll show up on this page automatically.
-        </p>
+      <div class="cards-toolbar">
+        <div class="cards-toolbar-filters">
+          <div class="filter-group" id="role-filter-group"></div>
+          <div class="filter-group" id="pool-filter-group"></div>
+        </div>
+        <input type="text" id="card-search" class="card-search" placeholder="Search by card or character name…" />
+      </div>
+      <p class="card-count" id="card-count"></p>
+
+      <div class="cards-grid" id="cards-grid"></div>
+      <div class="empty-state" id="cards-empty-state" style="display:none;">No cards match those filters.</div>
+
+      <div class="lore-note" style="margin-top:32px;">
+        <strong>Where this data comes from</strong>
+        Card art, odds, HP/DMG, and ability text are pulled from the
+        <a href="https://anime-card-clash.fandom.com/wiki/All_Cards" target="_blank" rel="noopener">Anime Card Clash Fandom wiki</a>.
+        The wiki doesn't have every card in the game documented yet — as it's updated,
+        add new entries to <code>js/cards-data.js</code> and they'll appear here automatically.
       </div>
     </div>
   </section>
@@ -74,10 +84,8 @@
 </footer>
 
 <script src="js/spores.js"></script>
-<script src="js/guides-data.js"></script>
-<script src="js/guides-render.js"></script>
+<script src="js/cards-data.js"></script>
+<script src="js/cards-render.js"></script>
 <script src="js/main.js"></script>
-
-<script>renderGuides({ containerId: "ranked-guides", category: "ranked", mode: "grid" });</script>
 </body>
 </html>

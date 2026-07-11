@@ -37,8 +37,7 @@
       <a href="story.html">Story</a>
       <a href="story-towers.html">Story Towers</a>
       <a href="guides.html">Guides</a>
-      <a href="teams.html">Team Builds</a>
-      <a href="calculator.html">Calculator</a>
+      <a href="cards.html">All Cards</a>
     </div>
   </div>
 </nav>
@@ -57,10 +56,10 @@
         </p>
         <div class="hero-actions">
           <a href="story.html" class="btn btn-primary">Read the Story Guide</a>
-          <a href="teams.html" class="btn btn-ghost">Browse Team Builds</a>
+          <a href="cards.html" class="btn btn-ghost">Browse All Cards</a>
         </div>
         <div class="hero-stats">
-          <div><strong id="stat-teams">—</strong><span>Teams Charted</span></div>
+          <div><strong id="stat-cards">—</strong><span>Cards Catalogued</span></div>
           <div><strong>7</strong><span>Story Chapters</span></div>
           <div><strong>4</strong><span>Rarity Tiers</span></div>
         </div>
@@ -94,21 +93,12 @@
         </div>
         <div class="journal-card feature-card">
           <div class="icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="7" r="2.4"/><circle cx="12" cy="17" r="3"/><path d="M9.6 9.8 15 15M10.4 6.9l4.6-.4"/></svg>
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="3" width="9" height="13" rx="1"/><rect x="11" y="8" width="9" height="13" rx="1"/></svg>
           </div>
-          <h3>Team Builds</h3>
-          <p>Community-charted Card formations, filterable by tag, with
-          a difficulty rating so you know what you're piloting into.</p>
-          <a href="teams.html" class="btn btn-ghost">See Teams</a>
-        </div>
-        <div class="journal-card feature-card">
-          <div class="icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3v3M12 18v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M3 12h3M18 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/><circle cx="12" cy="12" r="4"/></svg>
-          </div>
-          <h3>Omen Calculator</h3>
-          <p>Enter your rate, pity count, and planned pulls to see your real
-          odds of a Mythic Card before the lantern-coins are spent.</p>
-          <a href="calculator.html" class="btn btn-ghost">Check Your Odds</a>
+          <h3>All Cards</h3>
+          <p>Every documented Card in one gallery — stats by rarity, base
+          odds, abilities, and tier, pulled straight from the wiki.</p>
+          <a href="cards.html" class="btn btn-ghost">Browse Cards</a>
         </div>
         <div class="journal-card feature-card">
           <div class="icon">
@@ -176,11 +166,11 @@
 </footer>
 
 <script src="js/spores.js"></script>
-<script src="js/teams-data.js"></script>
+<script src="js/cards-data.js"></script>
 <script src="js/main.js"></script>
 <script>
-  document.getElementById("stat-teams").textContent =
-    typeof TEAMS !== "undefined" ? TEAMS.length : "—";
+  document.getElementById("stat-cards").textContent =
+    typeof CARDS !== "undefined" ? CARDS.length : "—";
 </script>
 </body>
 </html>
