@@ -1,22 +1,26 @@
 # Hollowmere — Field Guide
 
-A static game-guide site: story chapters and a full Card database. No build
-step, no backend — plain HTML/CSS/JS, ready for GitHub Pages.
+A static game-guide site for Anime Card Clash: story chapters, a full Card
+database, dungeon/tower/raid team builds, and the Omen luck calculator. No
+build step, no backend — plain HTML/CSS/JS, ready for GitHub Pages.
 
-## Adding a card (this is the whole workflow)
+## Adding or updating a card
 
 1. Open `js/cards-data.js`.
 2. Copy an existing card object in the `CARDS` array as a template.
 3. Fill in the fields — `name`, `role` (`"Attacker"` or `"Support"`), `pool`,
    `tier` (or `null` if it isn't on the community tier list), `image` (the
    real wikia CDN URL — see below), `ability`, and `stats` per rarity.
-4. Save. Open `cards.html` (or refresh it) to see the new tile. Role/pool
-   filter chips are built automatically from whatever values are in the
-   data — nothing else to edit.
+4. Save, then run `node tools/download-images.js` so the new card's art gets
+   mirrored into `images/cards/` (see below).
+5. Open `cards.html` (or refresh it) to see the new tile. Role/pool filter
+   chips are built automatically from whatever values are in the data —
+   nothing else to edit.
 
 That file is the only thing you need to touch to keep the card list
 current. Everything else (grid, filters, search, stat tabs) renders itself
-from it.
+from it. Guide/team entries (Story, Dungeon, Raids, Towers, Ranked, etc.)
+work the same way, but live in `js/guides-data.js`.
 
 ### Pulling card images from the wiki
 
@@ -35,6 +39,27 @@ The [All Cards wiki page](https://anime-card-clash.fandom.com/wiki/All_Cards)
 is the source for everything currently in `cards-data.js`; it doesn't have
 every card in the game documented yet, so `cards.html` will grow as the
 wiki does.
+
+## Card images: local-first, with an automatic fallback
+
+Every card `<img>` now points at `images/cards/<id>.png` first. If that
+file doesn't exist (or fails to load), it falls back automatically to the
+original wiki CDN link — with `referrerpolicy="no-referrer"` set, which is
+what was actually stopping the hotlinked images from loading on GitHub
+Pages in the first place (Fandom's CDN can reject the referrer some
+browsers send from a different domain; dropping it entirely fixes that).
+
+So the site works out of the box either way. To also get instant local
+copies (faster loads, no dependency on Fandom's CDN staying up):
+
+```bash
+node tools/download-images.js
+```
+
+Requires Node 18+ (uses the built-in `fetch`). It reads every image URL out
+of `js/cards-data.js` and `js/guides-data.js`, downloads anything missing
+into `images/cards/`, and skips files it's already fetched — safe to re-run
+after adding new cards.
 
 ## Running it locally
 
@@ -55,26 +80,50 @@ python3 -m http.server 8000
 4. GitHub will publish it at `https://<your-username>.github.io/<repo-name>/`
    within a minute or two.
 
-Every time you push a change (including a new team in `teams-data.js`),
-GitHub Pages redeploys automatically — no rebuild step.
+Every time you push a change, GitHub Pages redeploys automatically — no
+rebuild step.
 
 ## File map
 
 ```
-index.html          Home page
-story.html           Story guide (7 chapters)
-cards.html            All Cards database (renders from cards-data.js)
-css/style.css          Design tokens + shared components
-css/pages.css           Page-specific styles
-js/cards-data.js         <- edit this to add/update cards
-js/cards-render.js        Renders cards-data.js into the grid (don't need to touch)
-js/spores.js                 Ambient background animation
-js/main.js                    Nav + small shared behavior
+index.html                 Home page
+story.html                  Story guide (7 chapters)
+story-towers.html            Story Towers team builds
+dungeon.html                   Dungeon Mode mechanics
+dungeon-teams.html               Bizarre/Titan dungeon team builds
+raids.html                        Raid team builds
+battle-tower.html                  Battle Tower team builds
+celestial-tower.html                Celestial Tower team builds
+world-boss.html                      World Boss team builds
+limited-towers.html                   Limited-event tower team builds
+underworld-invasion.html               Underworld Invasion team builds
+ranked.html                             Ranked team builds
+guides.html                              Hub linking every guide page
+lore.html                                 Lore / world-building page
+calculator.html                            Omen luck calculator
+cards.html                                  All Cards database (renders from cards-data.js)
+
+css/style.css               Design tokens + shared components (colors, buttons, nav, footer, Discord button)
+css/pages.css                 Page-specific styles (cards grid, guide cards, etc.)
+
+js/cards-data.js             <- edit this to add/update cards
+js/cards-render.js            Renders cards-data.js into the All Cards grid (don't need to touch)
+js/guides-data.js              <- edit this to add/update team-build guides
+js/guides-render.js             Generic renderer used by every guide page (don't need to touch)
+js/calculator.js                 Omen calculator logic
+js/spores.js                      Ambient background animation
+js/main.js                         Nav toggle, active-link marking, Discord button injection
+
+images/cards/                Local card art (populate with tools/download-images.js)
+tools/download-images.js      Fetches card art from the wiki into images/cards/
 ```
 
 ## Customizing further
 
 - Colors and fonts are all CSS variables at the top of `css/style.css`
-  under `:root` — change the palette there and it updates everywhere.
+  under `:root` — change the palette there and it updates everywhere. The
+  site currently uses a red/ember accent palette.
+- The Discord invite link lives in `js/main.js` (search for `discord.gg`) —
+  it's injected as a fixed button on every page from that one file.
 - Story chapters live directly in `story.html` as `<article class="chapter">`
   blocks — copy one to add an 8th chapter.
