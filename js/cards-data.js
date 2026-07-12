@@ -394,4 +394,157 @@ const CARDS = [
     ability: { name: "Double Strike", text: "Ability text is unfinished on the source wiki page — check the wiki link for updates." },
     stats: { Base: { odds: "1 in 100K", hp: "—", dmg: "—" } },
   },
+
+  /* --- New batch (added from uploaded art, no wiki page yet) ---
+     Every card below only has a `base` (Basic-rarity) entry instead of a
+     full `stats` table — Gold/Rainbow/Secret are generated automatically
+     at render time (each tier is 100x rarer and 4x the stats of the one
+     before it, same formula used for every hand-entered card above).
+     role/ability/base numbers here are PLACEHOLDERS pending real data —
+     edit any field below and it takes effect immediately, no other
+     changes needed. */
+  {
+    id: "awakened-soul-king", name: "Awakened Soul King", altName: null, role: "Attacker",
+    pool: "Standard Pool", tier: null, localImage: "Awakened_Soul_King.webp", image: null, wikiUrl: null,
+    ability: { name: "Unknown", text: "Ability not yet documented — update with the real text." },
+    base: { odds: "1 in 500", hp: "75", dmg: "38" },
+  },
+  {
+    id: "awakened-wizard-king", name: "Awakened Wizard King", altName: null, role: "Attacker",
+    pool: "Standard Pool", tier: null, localImage: "Awakened_Wizard_King.webp", image: null, wikiUrl: null,
+    ability: { name: "Unknown", text: "Ability not yet documented — update with the real text." },
+    base: { odds: "1 in 500", hp: "75", dmg: "38" },
+  },
+  {
+    id: "awakened-gojo", name: "Awakened Gojo", altName: null, role: "Attacker",
+    pool: "Standard Pool", tier: null, localImage: "Awk_gojo.webp", image: null, wikiUrl: null,
+    ability: { name: "Unknown", text: "Ability not yet documented — update with the real text." },
+    base: { odds: "1 in 500", hp: "75", dmg: "38" },
+  },
+  {
+    id: "cifer-v4", name: "Cifer V4.0", altName: null, role: "Attacker",
+    pool: "Standard Pool", tier: null, localImage: "Cifer_V4.0.webp", image: null, wikiUrl: null,
+    ability: { name: "Unknown", text: "Ability not yet documented — update with the real text." },
+    base: { odds: "1 in 500", hp: "75", dmg: "38" },
+  },
+  {
+    id: "colossal-giant", name: "Colossal Giant", altName: null, role: "Attacker",
+    pool: "Standard Pool", tier: null, localImage: "Colossal-Giant.webp", image: null, wikiUrl: null,
+    ability: { name: "Unknown", text: "Ability not yet documented — update with the real text." },
+    base: { odds: "1 in 500", hp: "75", dmg: "38" },
+  },
+  {
+    id: "cursed-spirit", name: "Cursed Spirit", altName: null, role: "Attacker",
+    pool: "Standard Pool", tier: null, localImage: "Cursed_Spirit.webp", image: null, wikiUrl: null,
+    ability: { name: "Unknown", text: "Ability not yet documented — update with the real text." },
+    base: { odds: "1 in 500", hp: "75", dmg: "38" },
+  },
+  {
+    id: "defense-force-captain", name: "Defense Force Captain", altName: null, role: "Support",
+    pool: "Standard Pool", tier: null, localImage: "Defense_Force_captain.webp", image: null, wikiUrl: null,
+    ability: { name: "Unknown", text: "Ability not yet documented — update with the real text." },
+    base: { odds: "1 in 500", hp: "75", dmg: "38" },
+  },
+  {
+    id: "demon-cat", name: "Demon Cat", altName: null, role: "Attacker",
+    pool: "Standard Pool", tier: null, localImage: "Demon_Cat.webp", image: null, wikiUrl: null,
+    ability: { name: "Unknown", text: "Ability not yet documented — update with the real text." },
+    base: { odds: "1 in 500", hp: "75", dmg: "38" },
+  },
+  {
+    id: "demon-crow", name: "Demon Crow", altName: null, role: "Attacker",
+    pool: "Standard Pool", tier: null, localImage: "Demon_Crow.webp", image: null, wikiUrl: null,
+    ability: { name: "Unknown", text: "Ability not yet documented — update with the real text." },
+    base: { odds: "1 in 500", hp: "75", dmg: "38" },
+  },
+  {
+    id: "demon-dog", name: "Demon Dog", altName: null, role: "Attacker",
+    pool: "Standard Pool", tier: null, localImage: "Demon_Dog.webp", image: null, wikiUrl: null,
+    ability: { name: "Unknown", text: "Ability not yet documented — update with the real text." },
+    base: { odds: "1 in 500", hp: "75", dmg: "38" },
+  },
+  {
+    id: "demon-ram", name: "Demon Ram", altName: null, role: "Attacker",
+    pool: "Standard Pool", tier: null, localImage: "Demon_Ram.webp", image: null, wikiUrl: null,
+    ability: { name: "Unknown", text: "Ability not yet documented — update with the real text." },
+    base: { odds: "1 in 500", hp: "75", dmg: "38" },
+  },
+  {
+    id: "deranged-elder-assassin", name: "Deranged Elder Assassin", altName: null, role: "Attacker",
+    pool: "Standard Pool", tier: null, localImage: "Deranged_Elder_Assassin.webp", image: null, wikiUrl: null,
+    ability: { name: "Unknown", text: "Ability not yet documented — update with the real text." },
+    base: { odds: "1 in 500", hp: "75", dmg: "38" },
+  },
+  {
+    id: "disgraced-sorcerer", name: "Disgraced Sorcerer", altName: null, role: "Attacker",
+    pool: "Standard Pool", tier: null, localImage: "Disgraced_Sorcerer.webp", image: null, wikiUrl: null,
+    ability: { name: "Unknown", text: "Ability not yet documented — update with the real text." },
+    base: { odds: "1 in 500", hp: "75", dmg: "38" },
+  },
+  {
+    id: "elf-prodigy", name: "Elf Prodigy", altName: null, role: "Support",
+    pool: "Standard Pool", tier: null, localImage: "Elf_Prodigy.webp", image: null, wikiUrl: null,
+    ability: { name: "Unknown", text: "Ability not yet documented — update with the real text." },
+    base: { odds: "1 in 500", hp: "75", dmg: "38" },
+  },
+  {
+    id: "emi-strategist", name: "Emi Strategist", altName: null, role: "Support",
+    pool: "Standard Pool", tier: null, localImage: "Emi_strategist.webp", image: null, wikiUrl: null,
+    ability: { name: "Unknown", text: "Ability not yet documented — update with the real text." },
+    base: { odds: "1 in 500", hp: "75", dmg: "38" },
+  },
+  {
+    id: "fate-temper-bull", name: "Fate Temper Bull", altName: null, role: "Attacker",
+    pool: "Standard Pool", tier: null, localImage: "Fate_Temper_Bull.webp", image: null, wikiUrl: null,
+    ability: { name: "Unknown", text: "Ability not yet documented — update with the real text." },
+    base: { odds: "1 in 500", hp: "75", dmg: "38" },
+  },
+  {
+    id: "ice-clone", name: "Ice Clone", altName: null, role: "Attacker",
+    pool: "Standard Pool", tier: null, localImage: "Ice_Clone.webp", image: null, wikiUrl: null,
+    ability: { name: "Unknown", text: "Ability not yet documented — update with the real text." },
+    base: { odds: "1 in 500", hp: "75", dmg: "38" },
+  },
+  {
+    id: "oni-princess", name: "Oni Princess", altName: null, role: "Attacker",
+    pool: "Standard Pool", tier: null, localImage: "Oni-Princess.webp", image: null, wikiUrl: null,
+    ability: { name: "Unknown", text: "Ability not yet documented — update with the real text." },
+    base: { odds: "1 in 500", hp: "75", dmg: "38" },
+  },
+  {
+    id: "princess-of-light", name: "Princess of Light", altName: null, role: "Support",
+    pool: "Standard Pool", tier: null, localImage: "Princess_of_light.webp", image: null, wikiUrl: null,
+    ability: { name: "Unknown", text: "Ability not yet documented — update with the real text." },
+    base: { odds: "1 in 500", hp: "75", dmg: "38" },
+  },
+  {
+    id: "royal-paladin", name: "Royal Paladin", altName: null, role: "Support",
+    pool: "Standard Pool", tier: null, localImage: "Royal_Paladin.webp", image: null, wikiUrl: null,
+    ability: { name: "Unknown", text: "Ability not yet documented — update with the real text." },
+    base: { odds: "1 in 500", hp: "75", dmg: "38" },
+  },
+  {
+    id: "shield-hero", name: "Shield Hero", altName: null, role: "Support",
+    pool: "Standard Pool", tier: null, localImage: "Shield-hero.webp", image: null, wikiUrl: null,
+    ability: { name: "Unknown", text: "Ability not yet documented — update with the real text." },
+    base: { odds: "1 in 500", hp: "75", dmg: "38" },
+  },
+  {
+    id: "sovereign-bull-maiden", name: "Sovereign Bull Maiden", altName: null, role: "Attacker",
+    pool: "Standard Pool", tier: null, localImage: "Sovereign_Bull_Maiden.webp", image: null, wikiUrl: null,
+    ability: { name: "Unknown", text: "Ability not yet documented — update with the real text." },
+    base: { odds: "1 in 500", hp: "75", dmg: "38" },
+  },
+  {
+    id: "twin-day-demon", name: "Twin Day Demon", altName: null, role: "Attacker",
+    pool: "Standard Pool", tier: null, localImage: "Twin_Day_Demon.webp", image: null, wikiUrl: null,
+    ability: { name: "Unknown", text: "Ability not yet documented — update with the real text." },
+    base: { odds: "1 in 500", hp: "75", dmg: "38" },
+  },
+  {
+    id: "unbound-sorcerer", name: "Unbound Sorcerer", altName: null, role: "Attacker",
+    pool: "Standard Pool", tier: null, localImage: "Unbound_Sorcerer_v2.webp", image: null, wikiUrl: null,
+    ability: { name: "Unknown", text: "Ability not yet documented — update with the real text." },
+    base: { odds: "1 in 500", hp: "75", dmg: "38" },
+  },
 ];
