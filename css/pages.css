@@ -173,11 +173,36 @@
   background: var(--panel-raised);
 }
 .card-avatar img { width: 100%; height: 100%; object-fit: cover; }
+/* Cards with real art (not a lettered fallback) get shown as a rectangle
+   so the whole card is visible instead of being cropped into a circle. */
+.card-avatar:not(.card-avatar-fallback) {
+  width: 40px;
+  height: 54px;
+  border-radius: 6px;
+  border: 1px solid var(--line-strong);
+}
 .card-avatar-fallback {
   font-family: var(--f-mono);
   font-size: 0.64rem;
   font-weight: 700;
   border: 1px solid;
+}
+
+/* Rarity text colors, used wherever a team member's rarity is known */
+.rarity-text { font-size: 0.68rem; font-weight: 700; margin-left: 5px; }
+.rarity-text.rarity-basic { color: var(--ink-faint); }
+.rarity-text.rarity-gold { color: #e8c34a; }
+.rarity-text.rarity-rainbow {
+  background: linear-gradient(90deg, #ff5f6d, #ffc371, #f9f871, #6dd5ed, #a06cf9, #ff5f6d);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rarity-rainbow-shift 5s linear infinite;
+}
+.rarity-text.rarity-secret { color: #ff4d4d; }
+@keyframes rarity-rainbow-shift {
+  to { background-position: 300% 0; }
 }
 
 .guide-columns {
