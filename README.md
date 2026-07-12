@@ -22,6 +22,16 @@ current. Everything else (grid, filters, search, stat tabs) renders itself
 from it. Guide/team entries (Story, Dungeon, Raids, Towers, Ranked, etc.)
 work the same way, but live in `js/guides-data.js`.
 
+Each team member object is `{ "n": "Card Name", "i": "trait/item or --", "r": "Gold" }`.
+The `r` field is optional — when set to `"Basic"`, `"Gold"`, `"Rainbow"`, or
+`"Secret"`, the card's name gets a colored rarity tag next to it (gold text
+for Gold, an animated rainbow gradient for Rainbow, red for Secret). Leave
+it out if you don't know the rarity for that team.
+
+Card avatars in team builds render as a small rectangle (full card art
+visible) whenever that card has a real image entry in `CARD_IMAGES`; cards
+without one fall back to a circular initials avatar.
+
 ### Pulling card images from the wiki
 
 Fandom's image URLs (`static.wikia.nocookie.net/.../revision/latest?cb=...`)
