@@ -4,18 +4,55 @@ A static game-guide site for Anime Card Clash: story chapters, a full Card
 database, dungeon/tower/raid team builds, and the Omen luck calculator. No
 build step, no backend — plain HTML/CSS/JS, ready for GitHub Pages.
 
+> **Heads up:** 24 cards were just added using only the art you provided —
+> their `role`, `ability`, and `base` stats in `js/cards-data.js` are all
+> placeholders (search the file for `"Ability not yet documented"`) so they
+> show up on the site now. Swap in the real numbers whenever you have them;
+> nothing else needs to change since Gold/Rainbow/Secret recalculate from
+> `base` automatically.
+
 ## Adding or updating a card
 
 1. Open `js/cards-data.js`.
 2. Copy an existing card object in the `CARDS` array as a template.
 3. Fill in the fields — `name`, `role` (`"Attacker"` or `"Support"`), `pool`,
    `tier` (or `null` if it isn't on the community tier list), `image` (the
-   real wikia CDN URL — see below), `ability`, and `stats` per rarity.
+   real wikia CDN URL — see below, or `null` if you only have a local file),
+   `ability`, and stats (see the two options below).
 4. Save, then run `node tools/download-images.js` so the new card's art gets
-   mirrored into `images/cards/` (see below).
+   mirrored into `images/cards/` (see below) — skip this if you already
+   dropped an image file into `images/cards/` yourself and set `localImage`.
 5. Open `cards.html` (or refresh it) to see the new tile. Role/pool filter
    chips are built automatically from whatever values are in the data —
    nothing else to edit.
+
+### Entering stats: just Basic, or the full table
+
+You only ever need to enter **Basic**-rarity numbers. Give the card a
+`base` instead of a full `stats` table:
+
+```js
+base: { odds: "1 in 500", hp: "75", dmg: "38" },
+```
+
+Gold/Rainbow/Secret are generated automatically at render time — each
+tier is **100x rarer** (odds) and **4x the stats** (HP/DMG) of the tier
+before it. So Gold = base × (100 odds, 4 stats), Rainbow = base × (10,000
+odds, 16 stats), Secret = base × (1,000,000 odds, 64 stats). You never
+have to type those out or do the math — just update `base` and every tier
+recalculates itself.
+
+If a card's real Gold/Rainbow/Secret numbers don't follow that formula
+(some don't), give it a full `stats: { Basic: {...}, Gold: {...}, ... }`
+object instead — same as every hand-entered card already in the file —
+and that takes priority over `base`.
+
+### Cards with only local art (no wiki page yet)
+
+If you've got a card's image file but no wiki source for it, set
+`localImage` to the filename inside `images/cards/` (e.g.
+`"Some_Card.webp"`) and leave `image` and `wikiUrl` as `null`. The card
+renders using that local file directly with no CDN fallback needed.
 
 That file is the only thing you need to touch to keep the card list
 current. Everything else (grid, filters, search, stat tabs) renders itself
